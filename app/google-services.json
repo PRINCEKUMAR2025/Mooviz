@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "917051362033",
+    "project_id": "reels-ac4df",
+    "storage_bucket": "reels-ac4df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917051362033:android:d504b29d64d664c3b17750",
+        "android_client_info": {
+          "package_name": "com.example.cinelix"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6fJQZ1XYO-6-ruoUpA4DFpQLZqxMDdSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

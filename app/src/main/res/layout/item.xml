@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    android:background="@color/white"
+    app:cardCornerRadius="2dp">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sendMessage"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:fontFamily="@font/anton"
+        android:drawableEnd="@drawable/open"
+        android:text="Name"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/error"
+        android:textSize="17sp"/>
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:layout_width="match_parent"
+        android:layout_height="620dp"
+        android:id="@+id/exoplayer_item"
+        android:layout_margin="6dp"
+        app:use_controller="true"
+        app:resize_mode="fill">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="260dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/unlike"
+            android:id="@+id/like_btn"/>
+
+        <TextView
+            android:id="@+id/likes_textview"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="300dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginRight="5dp"
+            android:gravity="center_horizontal"
+            android:hint="likes"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="340dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/comment"
+            android:id="@+id/comment_activity_open"
+            android:clickable="true"/>
+
+        <TextView
+            android:id="@+id/comment_textview"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="380dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginRight="5dp"
+            android:gravity="center_horizontal"
+            android:hint="0"/>
+
+    </com.google.android.exoplayer2.ui.PlayerView>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
