@@ -37,7 +37,6 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class Showvideo extends AppCompatActivity {
-
     DatabaseReference databaseReference,likesrefernce;
     RecyclerView recyclerView;
     FirebaseDatabase database;
@@ -55,7 +54,14 @@ public class Showvideo extends AppCompatActivity {
         databaseReference=database.getReference("video");
         likesrefernce=database.getReference("likes");
 
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(Showvideo.this,LinearLayoutManager.
+                HORIZONTAL,false);
+
+        recyclerView.setLayoutManager(linearLayoutManager);
+
     }
+
+
 
     private void firebaseSearch(String searchtext){
         String query=searchtext.toLowerCase();
@@ -115,7 +121,6 @@ public class Showvideo extends AppCompatActivity {
         FirebaseRecyclerAdapter<Member,ViewHolder> firebaseRecyclerAdapter=new FirebaseRecyclerAdapter<Member, ViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Member model) {
-
                 FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
                 String currentUserId =user.getUid();
                 final String postkey = getRef(position).getKey();
@@ -268,4 +273,5 @@ public class Showvideo extends AppCompatActivity {
         AlertDialog alertDialog=builder.create();
         alertDialog.show();
     }
+
 }

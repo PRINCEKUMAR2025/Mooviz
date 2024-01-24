@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_20sdp"
             android:text="Forgot Your Password Reset Here"
+            android:gravity="center"
             android:textColor="@color/secondary_text"
             android:textSize="@dimen/_18ssp"
             android:textStyle="bold"/>

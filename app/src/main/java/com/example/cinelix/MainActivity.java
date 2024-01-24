@@ -19,6 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     Member member;
     UploadTask uploadTask;
     FirebaseAuth auth;
+    LottieAnimationView Lottie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         mediaController=new MediaController(this);
         videoView.setMediaController(mediaController);
         videoView.start();
+        Lottie=findViewById(R.id.Lottie);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

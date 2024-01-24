@@ -8,8 +8,6 @@
     android:background="@color/white"
     tools:context=".Fullscreen">
 
-
-
     <com.google.android.exoplayer2.ui.PlayerView
         android:layout_width="match_parent"
         android:layout_height="230dp"
@@ -32,6 +30,40 @@
             android:visibility="visible"/>
 
     </com.google.android.exoplayer2.ui.PlayerView>
+
+    <Button
+        android:id="@+id/download_btn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:background="@color/primary"
+        android:drawableStart="@drawable/download"
+        android:gravity="center"
+        android:text="Download"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Download for free"
+        android:textSize="20dp"
+        android:textColor="@color/received_message_background"
+        android:layout_marginTop="400dp"
+        android:gravity="center"/>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
+
 
 
 

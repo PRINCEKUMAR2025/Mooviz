@@ -27,7 +27,7 @@
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/arizonia"
         android:gravity="center"
-        android:text="Bellesa\nDesigned By Prince"
+        android:text="Your Ticket to Unlimited Entertainment"
         android:textColor="@color/error"
         android:textSize="30dp"
         android:textStyle="bold" />
@@ -39,6 +39,6 @@
         android:layout_centerInParent="true"
         android:elevation="5dp"
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/splashforcinelix" />
+        app:lottie_rawRes="@raw/moviz" />
 
 </RelativeLayout>

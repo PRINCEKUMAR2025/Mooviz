@@ -49,7 +49,7 @@ dependencies {
 //    implementation("com.android.support:design:28.0.0")
 
 
-
+    implementation("com.google.android.gms:play-services-ads:22.6.0")
     implementation("com.google.android.exoplayer:exoplayer:2.19.1")
     implementation("com.google.android.exoplayer:exoplayer-core:2.19.1")
     implementation("com.squareup.picasso:picasso:2.71828")

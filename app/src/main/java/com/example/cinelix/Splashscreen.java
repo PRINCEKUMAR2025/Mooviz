@@ -22,7 +22,7 @@ public class Splashscreen extends AppCompatActivity {
         appName=findViewById(R.id.appName);
         Lottie=findViewById(R.id.Lottie);
 
-        appName.animate().translationY(-1300).setDuration(2700).setStartDelay(0);
+        appName.animate().translationY(-600).setDuration(2700).setStartDelay(0);
 //        Lottie.animate().translationY(2000).setDuration(2000).setStartDelay(2900);
 
         new Handler().postDelayed(new Runnable() {
