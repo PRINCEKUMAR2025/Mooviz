@@ -1,6 +1,6 @@
 <h1>Mooviz is your ultimate gateway to cinematic bliss, offering a seamless movie streaming experience right at your fingertips. Powered by the cutting-edge ExoPlayer technology, Mooviz delivers stunning visuals and immersive audio, bringing your favorite films to life like never before. With an extensive library of movies spanning across genres and languages, there's something for every cinephile. But Mooviz isn't just another streaming platform; it's a community hub where movie enthusiasts gather to discover, discuss, and share their cinematic adventures. Leveraging Firebase integration, Mooviz ensures personalized recommendations, real-time updates, and seamless synchronization across devices. Whether you're craving the latest blockbuster or seeking hidden gems, Mooviz is your go-to destination for endless entertainment. Welcome to a world where every movie moment matters – welcome to Mooviz<h1>
 
-Login and Authentication: Mooviz ensures the security of user accounts through a robust login and authentication system. This feature allows users to securely sign in to their accounts using their credentials, ensuring that only authorized individuals can access the app's features and content.
+<h2>Login and Authentication: Mooviz ensures the security of user accounts through a robust login and authentication system. This feature allows users to securely sign in to their accounts using their credentials, ensuring that only authorized individuals can access the app's features and content.
 
 User Personal Account and Username: Upon signing up, users can create their personal accounts on Mooviz. They can choose a unique username that identifies them within the Mooviz community. This username becomes their digital identity and allows them to personalize their experience on the platform.
 
@@ -22,7 +22,7 @@ Likes and Dislikes: Users can express their opinions on movies by liking or disl
 
 Comment Section: Each movie on Mooviz has its dedicated comment section where users can engage in discussions, share their thoughts, and post reviews. This feature encourages community interaction and fosters a sense of camaraderie among movie enthusiasts, allowing users to connect with like-minded individuals and exchange valuable insights and recommendations.
 
-Google Ads Integration: Mooviz integrates Google Ads within the app to generate revenue while providing users with uninterrupted streaming. These non-intrusive ads are strategically placed within the app's interface, ensuring a seamless viewing experience while also supporting the app's sustainability and growth.
+Google Ads Integration: Mooviz integrates Google Ads within the app to generate revenue while providing users with uninterrupted streaming. These non-intrusive ads are strategically placed within the app's interface, ensuring a seamless viewing experience while also supporting the app's sustainability and growth.<h2>
 
 1.Splash Screen
 ![WhatsApp Image 2024-02-01 at 16 01 03_36199149](https://github.com/PRINCEKUMAR2025/Mooviz/assets/96488489/947b839c-0ec3-457b-aa15-a4b4021f62ee)
