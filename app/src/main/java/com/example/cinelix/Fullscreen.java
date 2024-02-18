@@ -34,6 +34,7 @@ import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSource;
 import com.google.android.exoplayer2.util.Util;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
@@ -72,11 +73,18 @@ public class Fullscreen extends AppCompatActivity {
             }
         });
 
+       /* Fix banner ad AdView adView = new AdView(this);
+
+        adView.setAdSize(AdSize.BANNER);
+
+        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+// TODO: Add adView to your view hierarchy.*/
+
         AdView mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712"/*myactual Interstitial ca-app-pub-8361032125437158/1492264192*/, adRequest,
+        InterstitialAd.load(this,"ca-app-pub-8361032125437158/1492264192", adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
@@ -146,6 +154,7 @@ public class Fullscreen extends AppCompatActivity {
                     fullscreen=false;
                     textView.setVisibility(View.VISIBLE);
                     downloadbtn.setVisibility(View.VISIBLE);
+                    mAdView.setVisibility(View.VISIBLE);
                 }else {
                     fullscreenButton.setImageDrawable(ContextCompat.getDrawable(Fullscreen.this,R.drawable.shrink));
                     getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
@@ -161,6 +170,7 @@ public class Fullscreen extends AppCompatActivity {
                     fullscreen=true;
                     textView.setVisibility(View.INVISIBLE);
                     downloadbtn.setVisibility(View.INVISIBLE);
+                    mAdView.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -170,11 +180,11 @@ public class Fullscreen extends AppCompatActivity {
 
         DownloadManager.Request request=new DownloadManager.Request(Uri.parse(url));
         request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-        request.setTitle("Download");
-        request.setDescription("Downloading File");
+        request.setTitle("Mooviz");
+        request.setDescription("Downloading "+title);
         request.allowScanningByMediaScanner();
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,title+"mooviz");
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,title);
         DownloadManager manager=(DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
         manager.enqueue(request);
     }
