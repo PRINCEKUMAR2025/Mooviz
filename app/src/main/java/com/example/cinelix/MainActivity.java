@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     StorageReference storageReference;
     DatabaseReference databaseReference;
 
-    DatabaseReference databaseReferenceids;
+//    DatabaseReference databaseReferenceids;
     Member member;
     UploadTask uploadTask;
     FirebaseAuth auth;
@@ -62,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
         member=new Member();
         storageReference= FirebaseStorage.getInstance().getReference("Video");
         databaseReference= FirebaseDatabase.getInstance().getReference("video");
-        databaseReferenceids = FirebaseDatabase.getInstance().getReference("deviceids");
+
+//        databaseReferenceids = FirebaseDatabase.getInstance().getReference("deviceids");
+
         videoView=findViewById(R.id.videoview_main);
         logOut=findViewById(R.id.logout);
         auth=FirebaseAuth.getInstance();
@@ -120,12 +122,12 @@ public class MainActivity extends AppCompatActivity {
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri));
     }
 
-    private void deviceids(){
-        String id= Settings.Secure.getString(getContentResolver(),Settings.Secure.ANDROID_ID);
-        String i=databaseReferenceids.push().getKey();
-        databaseReferenceids.child(i).setValue(id);
-
-    }
+//    private void deviceids(){
+//        String id= Settings.Secure.getString(getContentResolver(),Settings.Secure.ANDROID_ID);
+//        String i=databaseReferenceids.push().getKey();
+//        databaseReferenceids.child(i).setValue(id);
+//
+//    }
 
     private void UploadVideo(){
         String videoName=editText.getText().toString();
@@ -174,9 +176,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        deviceids();
-    }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        deviceids();
+//    }
 }
