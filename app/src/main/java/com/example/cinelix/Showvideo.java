@@ -131,12 +131,14 @@ public class Showvideo extends AppCompatActivity {
                     @Override
                     public void onItemClick(View view, int position) {
 
+
                         name=getItem(position).getName();
                         url=getItem(position).getVideourl();
                         Intent intent=new Intent(Showvideo.this,Fullscreen.class);
                         intent.putExtra("nam",name);
                         intent.putExtra("ur",url);
                         startActivity(intent);
+//                        holder.exoPlayer.release();
                     }
 
                     @Override
@@ -213,6 +215,9 @@ public class Showvideo extends AppCompatActivity {
             Intent intent =new Intent(Showvideo.this,Username.class);
             startActivity(intent);
             return true;
+        } else if (item.getItemId()==R.id.get_premium) {
+            Intent intent =new Intent(Showvideo.this, Getpremium.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

@@ -7,7 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.View;
 import android.webkit.MimeTypeMap;
@@ -26,6 +28,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.reporting.MessagingClientEvent;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -42,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
     Button button;
     StorageReference storageReference;
     DatabaseReference databaseReference;
+
+    DatabaseReference databaseReferenceids;
     Member member;
     UploadTask uploadTask;
     FirebaseAuth auth;
@@ -51,9 +57,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseMessaging.getInstance().subscribeToTopic("mooviz");
         member=new Member();
         storageReference= FirebaseStorage.getInstance().getReference("Video");
         databaseReference= FirebaseDatabase.getInstance().getReference("video");
+        databaseReferenceids = FirebaseDatabase.getInstance().getReference("deviceids");
         videoView=findViewById(R.id.videoview_main);
         logOut=findViewById(R.id.logout);
         auth=FirebaseAuth.getInstance();
@@ -111,6 +120,13 @@ public class MainActivity extends AppCompatActivity {
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri));
     }
 
+    private void deviceids(){
+        String id= Settings.Secure.getString(getContentResolver(),Settings.Secure.ANDROID_ID);
+        String i=databaseReferenceids.push().getKey();
+        databaseReferenceids.child(i).setValue(id);
+
+    }
+
     private void UploadVideo(){
         String videoName=editText.getText().toString();
         String search=editText.getText().toString().toLowerCase();
@@ -156,5 +172,11 @@ public class MainActivity extends AppCompatActivity {
     public void ShowVideo(View view) {
         Intent intent=new Intent(MainActivity.this,Showvideo.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        deviceids();
     }
 }

@@ -1,32 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_margin="10dp">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_margin="10dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="10dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/comment_time_date_item"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
-            android:hint="time"
+            android:textSize="12sp"
             android:textColor="@color/primary"
-            android:layout_marginStart="5dp"
-            android:id="@+id/comment_time_date_item"/>
+            android:text="Time"
+            android:layout_marginStart="5dp"/>
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/comment_username_item"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:hint="username"
-            android:background="@drawable/background_recieved_message"
+            android:textSize="18sp"
             android:textColor="@color/black"
-            android:layout_margin="5dp"
-            android:id="@+id/comment_username_item"/>
+            android:text="Username"
+            android:background="@drawable/background_recieved_message"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"/>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

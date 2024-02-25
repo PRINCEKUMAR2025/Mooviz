@@ -13,5 +13,10 @@
         android:title="Profile"
         />
 
+    <item android:id="@+id/get_premium"
+        android:icon="@drawable/ic_search"
+        android:title="Buy premium"
+        />
+
 
 </menu>

@@ -43,15 +43,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="590dp"
+        android:layout_height="560dp"
         android:background="@drawable/background_input"
         android:orientation="vertical">
-
 
         <VideoView
             android:id="@+id/videoview_main"
             android:layout_width="match_parent"
-            android:layout_height="570dp"
+            android:layout_height="270dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="7dp"
             android:layout_marginRight="10dp"
@@ -66,6 +65,17 @@
             android:indeterminateTint="@color/primary"
             android:visibility="invisible" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:text="1. To upload movies you can select file and upload \n\n2. To see movies click on show movies"
+            android:textColor="@color/error"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+
+
 
 
     </LinearLayout>
@@ -74,25 +84,48 @@
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
         android:layout_weight="1"
         android:background="@drawable/background_inpu_newt"
         android:orientation="horizontal">
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/Lottie1"
+        <LinearLayout
             android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_height="100dp"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:clickable="true"
+            android:orientation="vertical"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
-            android:elevation="5dp"
-            android:onClick="ChooseVideo"
-            app:lottie_loop="true"            app:lottie_autoPlay="true"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:lottie_rawRes="@raw/add" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/Lottie1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="top"
+                android:clickable="true"
+                android:elevation="5dp"
+                android:onClick="ChooseVideo"
+                app:lottie_autoPlay="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_rawRes="@raw/add" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:text="Upload Movie"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+
 
         <Button
             android:id="@+id/button_upload_main"
@@ -111,22 +144,43 @@
             app:layout_constraintTop_toTopOf="@id/Lottie1"
             android:textSize="20dp" />
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/Lottie"
+        <LinearLayout
             android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_height="100dp"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:clickable="true"
-            android:elevation="5dp"
-            android:onClick="ShowVideo"
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/movie" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/Lottie"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="top"
+                android:clickable="true"
+                android:elevation="5dp"
+                android:onClick="ShowVideo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_rawRes="@raw/movie" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="Show Movies"
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+
 
     </LinearLayout>
 
